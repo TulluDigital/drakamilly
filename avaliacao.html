@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Pré-avaliação estética | Dra. Kamilly Almeida</title>
+
+  <meta
+    name="description"
+    content="Pré-avaliação estética personalizada com a Dra. Kamilly Almeida. Envie suas informações para receber o próximo passo da avaliação."
+  />
+
+  <link rel="stylesheet" href="assets/css/kamilly.css" />
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand" aria-label="Dra. Kamilly Almeida">
+        <span class="brand-name">Dra. Kamilly Almeida</span>
+        <span class="brand-meta">CRO-SP 177.234</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Navegação principal">
+        <a href="index.html#procedimentos">Procedimentos</a>
+        <a href="index.html#sobre">Sobre</a>
+        <a href="https://www.instagram.com/kamillyv_/" target="_blank" rel="noopener">
+          Instagram
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="form-hero section">
+      <div class="container narrow">
+        <p class="eyebrow">Pré-avaliação estética</p>
+
+        <h1>Vamos entender o que faz sentido para o seu rosto.</h1>
+
+        <p class="hero-subtitle">
+          Responda algumas perguntas para entendermos seu objetivo, histórico e
+          o melhor caminho para uma avaliação estética personalizada.
+        </p>
+
+        <p class="cta-note">
+          Se você já sabe exatamente o que deseja fazer, pode ir direto ao ponto.
+          Se ainda está em dúvida, suas respostas ajudam a orientar a avaliação
+          com mais segurança.
+        </p>
+      </div>
+    </section>
+
+    <section class="form-section section">
+      <div class="container narrow">
+        <form class="assessment-form" action="TBD" method="POST">
+          <div class="form-card">
+            <p class="section-kicker">Seus dados</p>
+
+            <div class="form-grid">
+              <div class="field">
+                <label for="nome">Nome completo</label>
+                <input
+                  type="text"
+                  id="nome"
+                  name="nome"
+                  placeholder="Digite seu nome"
+                  required
+                />
+              </div>
+
+              <div class="field">
+                <label for="whatsapp">WhatsApp</label>
+                <input
+                  type="tel"
+                  id="whatsapp"
+                  name="whatsapp"
+                  placeholder="(11) 99999-9999"
+                  required
+                />
+              </div>
+
+              <div class="field field-full">
+                <label for="email">E-mail</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="seuemail@exemplo.com"
+                  required
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="form-card">
+            <p class="section-kicker">Seu objetivo</p>
+
+            <div class="field">
+              <label for="incomodo">O que mais te incomoda hoje no seu rosto?</label>
+              <textarea
+                id="incomodo"
+                name="incomodo"
+                rows="4"
+                placeholder="Conte com suas palavras o que você gostaria de melhorar."
+                required
+              ></textarea>
+            </div>
+
+            <div class="field">
+              <label for="melhorar">O que você gostaria de melhorar ou realçar?</label>
+              <textarea
+                id="melhorar"
+                name="melhorar"
+                rows="4"
+                placeholder="Exemplo: lábios, contorno facial, linhas de expressão, simetria..."
+                required
+              ></textarea>
+            </div>
+          </div>
+
+          <div class="form-card">
+            <p class="section-kicker">Procedimento</p>
+
+            <div class="field">
+              <label for="nivel_decisao">
+                Você já sabe exatamente o que deseja fazer ou prefere uma orientação?
+              </label>
+              <select id="nivel_decisao" name="nivel_decisao" required>
+                <option value="">Selecione uma opção</option>
+                <option value="ja_sei">Já sei exatamente o que quero fazer</option>
+                <option value="tenho_ideia">Tenho uma ideia, mas quero orientação</option>
+                <option value="quero_entender">Ainda não sei, quero entender melhor</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="procedimento_interesse">
+                Se você já tiver em mente, qual procedimento te interessa?
+              </label>
+              <select id="procedimento_interesse" name="procedimento_interesse" required>
+                <option value="">Selecione uma opção</option>
+                <option value="preenchimento_labial">Preenchimento labial</option>
+                <option value="harmonizacao_facial">Harmonização facial</option>
+                <option value="botox">Botox / toxina botulínica</option>
+                <option value="outro">Outro</option>
+                <option value="ainda_nao_sei">Ainda não sei</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="historico">Você já realizou algum procedimento estético antes?</label>
+              <select id="historico" name="historico" required>
+                <option value="">Selecione uma opção</option>
+                <option value="nunca_fiz">Nunca fiz</option>
+                <option value="uma_vez">Já fiz uma vez</option>
+                <option value="mais_de_uma_vez">Já fiz mais de uma vez</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-card">
+            <p class="section-kicker">Expectativa</p>
+
+            <div class="field">
+              <label for="resultado">Qual tipo de resultado você busca?</label>
+              <select id="resultado" name="resultado" required>
+                <option value="">Selecione uma opção</option>
+                <option value="natural">Mais natural possível</option>
+                <option value="harmonia">Mais harmonia no rosto</option>
+                <option value="volume_definicao">Mais volume / definição</option>
+                <option value="orientacao">Quero entender o que combina comigo</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="prazo">Quando você pretende realizar o procedimento?</label>
+              <select id="prazo" name="prazo" required>
+                <option value="">Selecione uma opção</option>
+                <option value="quanto_antes">O quanto antes</option>
+                <option value="proximas_semanas">Nas próximas semanas</option>
+                <option value="avaliando">Ainda estou avaliando</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="investimento">
+                Você está disposto(a) a investir em um procedimento estético de qualidade?
+              </label>
+              <select id="investimento" name="investimento" required>
+                <option value="">Selecione uma opção</option>
+                <option value="sim">Sim</option>
+                <option value="depende_avaliacao">Depende da avaliação</option>
+                <option value="ainda_nao_sei">Ainda não sei</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-card">
+            <p class="section-kicker">Finalização</p>
+
+            <div class="field">
+              <label for="observacoes">Deseja acrescentar alguma observação?</label>
+              <textarea
+                id="observacoes"
+                name="observacoes"
+                rows="4"
+                placeholder="Use este espaço para dúvidas, preferências ou informações importantes."
+              ></textarea>
+            </div>
+
+            <label class="checkbox-field">
+              <input type="checkbox" name="aceite" required />
+              <span>
+                Confirmo que as informações enviadas serão usadas para análise inicial
+                e que a avaliação profissional individualizada é necessária antes de
+                qualquer procedimento.
+              </span>
+            </label>
+
+            <button type="submit" class="btn btn-primary">
+              Enviar pré-avaliação
+            </button>
+
+            <p class="form-disclaimer">
+              Após o envio, você receberá por e-mail o próximo passo para escolher
+              o horário da sua avaliação estética personalizada.
+            </p>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <strong>Dra. Kamilly Almeida</strong>
+        <p>Cirurgiã-dentista | Harmonização Orofacial</p>
+        <p>CRO-SP 177.234</p>
+      </div>
+
+      <div>
+        <strong>Links</strong>
+        <a href="index.html">Página inicial</a>
+        <a href="https://www.instagram.com/kamillyv_/" target="_blank" rel="noopener">
+          Instagram
+        </a>
+        <a href="TBD" target="_blank" rel="noopener">
+          Termos de uso
+        </a>
+      </div>
+
+      <div>
+        <strong>Observação</strong>
+        <p>
+          As informações desta página não substituem avaliação profissional
+          individualizada. Resultados podem variar de acordo com cada paciente.
+        </p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
