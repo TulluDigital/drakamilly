@@ -269,48 +269,7 @@
       </div>
     </div>
   </footer>
- <script>
-const form = document.querySelector(".assessment-form");
-const endpoint = "https://script.google.com/macros/s/AKfycbxCruQ38hSRDoz5WRjIB5OFblt5rsRbItfZmCjPDne4Jejl38qcfccSThmXzNHGPVvf/exec";
-
-form.addEventListener("submit", function (e) {
-  e.preventDefault();
-
-  const formData = new FormData(form);
-  const data = {};
-
-  formData.forEach((value, key) => {
-    data[key] = value;
-  });
-
-  data.source_url = window.location.href;
-  data.user_agent = navigator.userAgent;
-
-  const payload = JSON.stringify(data);
-  const blob = new Blob([payload], { type: "text/plain;charset=utf-8" });
-
-  const sent = navigator.sendBeacon(endpoint, blob);
-
-  if (sent) {
-    alert("Perfeito. Sua pré-avaliação foi enviada. Verifique seu e-mail.");
-    form.reset();
-    return;
-  }
-
-  fetch(endpoint, {
-    method: "POST",
-    mode: "no-cors",
-    body: blob
-  })
-  .then(() => {
-    alert("Perfeito. Sua pré-avaliação foi enviada. Verifique seu e-mail.");
-    form.reset();
-  })
-  .catch(() => {
-    alert("Erro ao enviar. Tente novamente.");
-  });
-});
-</script>
+ 
   <iframe name="hidden_iframe" style="display:none;"></iframe>
 
 <script>
