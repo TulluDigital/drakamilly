@@ -54,7 +54,15 @@
 
     <section class="form-section section">
       <div class="container narrow">
-       <form class="assessment-form">
+       <form
+  class="assessment-form"
+  action="https://script.google.com/macros/s/AKfycbxCruQ38hSRDoz5WRjIB5OFblt5rsRbItfZmCjPDne4Jejl38qcfccSThmXzNHGPVvf/exec"
+  method="POST"
+  target="hidden_iframe"
+  onsubmit="setTimeout(() => { alert('Perfeito. Sua pré-avaliação foi enviada. Verifique seu e-mail.'); this.reset(); }, 800);"
+>
+         <input type="hidden" name="source_url" id="source_url" />
+<input type="hidden" name="user_agent" id="user_agent" />
           <div class="form-card">
             <p class="section-kicker">Seus dados</p>
 
@@ -302,6 +310,12 @@ form.addEventListener("submit", function (e) {
     alert("Erro ao enviar. Tente novamente.");
   });
 });
+</script>
+  <iframe name="hidden_iframe" style="display:none;"></iframe>
+
+<script>
+  document.getElementById("source_url").value = window.location.href;
+  document.getElementById("user_agent").value = navigator.userAgent;
 </script>
 </body>
 </html>
