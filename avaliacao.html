@@ -54,13 +54,7 @@
 
     <section class="form-section section">
       <div class="container narrow">
-       <form
-  class="assessment-form"
-  action="https://script.google.com/macros/s/AKfycbwIz_GcIEMQTAO0oNdHuvo8tSGWuSpjwwSZhimFqX7F5otRVXfputX8nI3CvTJSTb-2ew/exec"
-  method="POST"
-  target="hidden_iframe"
-  onsubmit="setTimeout(() => { alert('Perfeito. Sua pré-avaliação foi enviada. Verifique seu e-mail.'); this.reset(); }, 800);"
->
+       <form class="assessment-form" id="trialForm" novalidate>
          <input type="hidden" name="source_url" id="source_url" />
 <input type="hidden" name="user_agent" id="user_agent" />
           <div class="form-card">
@@ -270,11 +264,50 @@
     </div>
   </footer>
  
-  <iframe name="hidden_iframe" style="display:none;"></iframe>
+ <script>
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwIz_GcIEMQTAO0oNdHuvo8tSGWuSpjwwSZhimFqX7F5otRVXfputX8nI3CvTJSTb-2ew/exec";
 
-<script>
+const form = document.getElementById("trialForm");
+
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+
   document.getElementById("source_url").value = window.location.href;
   document.getElementById("user_agent").value = navigator.userAgent;
+
+  const formData = new FormData(form);
+  const payload = {};
+
+  formData.forEach((value, key) => {
+    payload[key] = value;
+  });
+
+  const blob = new Blob([JSON.stringify(payload)], {
+    type: "text/plain;charset=utf-8"
+  });
+
+  const sent = navigator.sendBeacon(SCRIPT_URL, blob);
+
+  if (sent) {
+    alert("Perfeito. Sua pré-avaliação foi enviada. Verifique seu e-mail.");
+    form.reset();
+    return;
+  }
+
+  fetch(SCRIPT_URL, {
+    method: "POST",
+    mode: "no-cors",
+    body: blob
+  })
+    .then(() => {
+      alert("Perfeito. Sua pré-avaliação foi enviada. Verifique seu e-mail.");
+      form.reset();
+    })
+    .catch(() => {
+      alert("Erro ao enviar. Tente novamente.");
+    });
+});
 </script>
+
 </body>
 </html>
