@@ -54,7 +54,7 @@
 
     <section class="form-section section">
       <div class="container narrow">
-       <form class="assessment-form" action="https://script.google.com/macros/s/AKfycbxCruQ38hSRDoz5WRjIB5OFblt5rsRbItfZmCjPDne4Jejl38qcfccSThmXzNHGPVvf/exec" method="POST">
+       <form class="assessment-form">
           <div class="form-card">
             <p class="section-kicker">Seus dados</p>
 
@@ -261,5 +261,42 @@
       </div>
     </div>
   </footer>
+  <script>
+const form = document.querySelector(".assessment-form");
+
+form.addEventListener("submit", async function (e) {
+  e.preventDefault();
+
+  const formData = new FormData(form);
+
+  const data = {};
+  formData.forEach((value, key) => {
+    data[key] = value;
+  });
+
+  // extras que seu script espera
+  data.source_url = window.location.href;
+  data.user_agent = navigator.userAgent;
+
+  try {
+    const response = await fetch("https://script.google.com/macros/s/AKfycbxCruQ38hSRDoz5WRjIB5OFblt5rsRbItfZmCjPDne4Jejl38qcfccSThmXzNHGPVvf/exec", {
+      method: "POST",
+      body: JSON.stringify(data)
+    });
+
+    const result = await response.json();
+
+    if (result.ok) {
+      alert("Perfeito. Sua pré-avaliação foi enviada. Verifique seu e-mail.");
+      form.reset();
+    } else {
+      alert("Erro ao enviar. Tente novamente.");
+    }
+
+  } catch (error) {
+    alert("Erro de conexão. Tente novamente.");
+  }
+});
+</script>
 </body>
 </html>
