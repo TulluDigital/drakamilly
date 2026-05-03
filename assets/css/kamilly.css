@@ -641,3 +641,20 @@ textarea:focus {
     padding: 64px 0 36px;
   }
 }
+.hero-visual {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.portrait-card {
+  width: 100%;
+  max-width: 420px; /* controla largura real */
+}
+
+.portrait-card img {
+  width: 100%;
+  height: 560px; /* controla altura visual (500–600 como você pediu) */
+  object-fit: cover;
+  object-position: center top; /* ajusta foco no rosto */
+  border-radius: 28px;
+}
